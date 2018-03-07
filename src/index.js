@@ -1,6 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import configureStore from "./stores/configureStore";
 import * as actions from "./actions";
 import Stream from "./components/Stream";
@@ -13,16 +15,24 @@ const tracks = [
     title: "Another track"
   }
 ];
+
 const store = configureStore();
 store.dispatch(actions.setTracks(tracks));
 
 const App = () => (
-  <Provider store={store}>
-    <div>
-      <h1>Hari getting into react/redux </h1>
-      <Stream />
-    </div>
-  </Provider>
+  <div>
+    <h1>Hari getting into react/redux </h1>
+    <Stream />
+  </div>
 );
 
-render(<App />, document.getElementById("root"));
+render(
+  <Provider store={store}>
+    <div>
+      <Router>
+        <Route exact path="/" component={App} />
+      </Router>
+    </div>
+  </Provider>,
+  document.getElementById("root")
+);
