@@ -6,6 +6,7 @@ import { withRouter } from "react-router-dom";
 import configureStore from "./stores/configureStore";
 import * as actions from "./actions";
 import Stream from "./components/Stream";
+import Callback from "./components/Callback";
 
 const tracks = [
   {
@@ -30,7 +31,10 @@ render(
   <Provider store={store}>
     <div>
       <Router>
-        <Route exact path="/" component={App} />
+        <div>
+          <Route exact path="/" component={App} />
+          <Route path="/callback" component={Callback} />
+        </div>
       </Router>
     </div>
   </Provider>,
