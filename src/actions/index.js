@@ -1,3 +1,8 @@
-import { setTracks } from "./track";
+import { pullAudios } from './auth'
+import {setTracks, playTrack} from "./track"
 
-export { setTracks };
+export {
+  pullAudios,
+  setTracks,
+  playTrack
+}
