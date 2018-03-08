@@ -17,7 +17,6 @@ function fetchStream() {
       API_ENDPOINT,
       {
         method: 'GET',
-        'Access-Control-Allow-Origin': '*',
         headers: {
           Accept: 'application/json',
         }

@@ -35,7 +35,7 @@ class Stream extends Component {
         </div>
         {
           activeTrack ?
-            <audio id="audio" ref="audio" src={`${activeTrack.audio_url}`}></audio> : null
+            <audio controls id="audio" ref="audio" src={`${activeTrack.audio_url}`}></audio> : null
         }
       </div>
     )
